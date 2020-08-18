@@ -1,7 +1,5 @@
-.
 // variable definitions and building authorization url
 type = 'text/javascript';
-const environmentId = ''; // available on settings page of p14c admin console
 const baseUrl = 'https://morganapps.ping-eng.com/'; // URL of where you will host this application
 
 const scopes = 'openid profile email address phone p1:update:user p1:read:user'; // default scopes to request
@@ -50,9 +48,9 @@ function generateNonce(length) {
 
 
 
-if (!clientId || !environmentId) {
+if (!clientId) {
 
-  alert('Be sure to edit js/auth.js with your environmentId and clientId');
+  alert('Be sure to edit js/auth.js with your and clientId');
 
 }
 
@@ -135,7 +133,7 @@ function validateOtp() {
     otp: otp
   });
   //let url = $('#validateOtpUrl').val();
-  let url = (authUrl + '/' + environmentId + '/flows/' + flowId);
+  let url = (authUrl + '/flows/' + flowId);
   let contenttype ='application/vnd.pingidentity.otp.check+json';
   //$('#validateOtpContentType').val();
   console.log('url :' + url);
@@ -149,7 +147,7 @@ function continue_push() {
   //location.href=authUrl + '/' + environmentId + '/flows/' + flowId;
   console.log('continue push called');
   //let url = $('#pushResumeUrl');
-  let url = authUrl + '/' + environmentId + '/flows/' + flowId;
+  let url = authUrl + '/flows/' + flowId;
   let contenttype ='application/json';
   //location.href = $('#pushResumeUrl').val();
   console.log('url ' + url);
@@ -299,9 +297,7 @@ const authorizationUrl =
   //build the admin auth url
   const adminAuthorizationUrl =
     authUrl +
-    '/' +
-    environmentId +
-    '/as/authorize?client_id=' +
+    '/as/author?client_id=' +
     adminClientId +
     '&response_type=' +
     responseType +
