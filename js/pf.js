@@ -284,9 +284,9 @@ function nextStep(data) {
 
 const authorizationUrl =
   authUrl +
-  '/' +
-  environmentId +
-  '/as/authorize?client_id=' +
+  '/'
+  +
+  '/as/authorization.oauth2?client_id=' +
   clientId +
   '&response_type=' +
   responseType +
