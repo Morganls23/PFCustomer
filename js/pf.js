@@ -2,7 +2,7 @@
 type = 'text/javascript';
 const baseUrl = 'https://morganapps.ping-eng.com/'; // URL of where you will host this application
 
-const scopes = 'openid profile email address phone p1:update:user p1:read:user'; // default scopes to request
+const scopes = 'openid profile email address phone'; // default scopes to request
 const responseType = 'token id_token'; // tokens to recieve
 
 const landingUrl = baseUrl + 'PFCustomer/index-finance.html'; // url to send the person once authentication is complete
