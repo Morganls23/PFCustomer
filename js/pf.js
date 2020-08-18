@@ -306,8 +306,6 @@ const authorizationUrl =
 
     const registerAuthorizationURL =
     authUrl +
-    '/' +
-    environmentId +
     '/as/authorize?client_id=' +
     clientId +
     '&response_type=' +
